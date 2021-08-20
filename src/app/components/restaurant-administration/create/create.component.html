@@ -1,1 +1,62 @@
-<p>create works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">
+        Crear Restaurante
+    </h4>
+    <button type="button" class="close" aria-label="Cerrar" (click)="ngModal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="container center form-group">
+        <form [formGroup]="formRestaurant" 
+              (submit)="sendData()">
+                <div class="col-12">
+                  <label class="center" for="name">Nombre</label>
+                    <input class="form-control mt-1" 
+                           type="text" 
+                           id="name" 
+                           formControlName='name'
+                    >
+                </div>
+                <div class="col-12 mt-4">
+                  <label class="center" for="description">Descripción</label>
+                    <input class="form-control mt-1" 
+                           type="text" 
+                           id="description" 
+                           formControlName='description'
+                    >
+                </div>
+                <div class="col-12 mt-4">
+                  <label class="center" for="address">Dirección</label>
+                    <input class="form-control mt-1" 
+                           type="text" 
+                           id="address" 
+                           formControlName='address'
+                    >
+                </div>
+                <div class="col-12 mt-4">
+                  <label class="center" for="city">Ciudad</label>
+                    <input class="form-control mt-1" 
+                           type="text" 
+                           id="city" 
+                           formControlName='city'
+                    >
+                </div>
+                <div class="col-12 mt-4">
+                  <label class="center" for="city">Imagen</label>
+                    <input class="form-control mt-1" 
+                           type="file" 
+                           id="city" 
+                           (change)="onFileChange($event)"
+                    >
+                </div>
+                <div class="col-12 mt-5" style="margin-bottom: 40px; text-align: right;">
+                        <button class="btn btn-success" 
+                                type="submit">
+                        Guardar
+                      </button>
+
+                </div>
+        </form>
+    </div>
+</div>

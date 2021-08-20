@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ResponseBack } from 'src/app/interfaces/response-back';
 import { RestaurantAdministrationService } from 'src/app/services/restaurant-administration.service';
+import { CreateComponent } from './create/create.component';
 
 @Component({
   selector: 'app-restaurant-administration',
@@ -30,7 +31,12 @@ export class RestaurantAdministrationComponent implements OnInit {
   };
 
   createRestaurant() {
-    const modal = 0
-  }
+    const modal = this.modal.open(CreateComponent);
+    modal.result.then(( result ) => {
+      this.getListOfRestaurant();
+    }, ( reason ) => {
+      this.getListOfRestaurant();
+    })
+  };
 
 }

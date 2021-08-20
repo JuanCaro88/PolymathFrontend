@@ -18,4 +18,15 @@ export class RestaurantAdministrationService {
   public getRestaurant() {
     return this.http.get(`${EndPointServer}/restaurant`, this.httpOptions)
   };
+
+  public createRestaurant( values:any, file: any ) {
+    const formData: FormData = new FormData();
+    formData.append('name', values.name);
+    formData.append('description', values.description);
+    formData.append('address', values.address);
+    formData.append('city', values.city);
+    formData.append('image', file, file.name);
+
+    return this.http.post(`${EndPointServer}/restaurant`, formData)
+  }
 }

@@ -10,6 +10,7 @@ import { RestaurantAdministrationComponent } from './components/restaurant-admin
 import { CreateComponent } from './components/restaurant-administration/create/create.component';
 import { EditComponent } from './components/restaurant-administration/edit/edit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
