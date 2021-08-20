@@ -1,0 +1,29 @@
+<h2 class="mt-4">Administración de restaurantes</h2>
+<div class="col-12 mb-3" style="text-align: right;">
+  <button type="button" class="btn btn-success">Crear restaurante</button>
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Ciudad</th>      
+        <th scope="col">Foto</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listRestaurants">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>      
+        <td>{{ item.address }}</td>
+        <td>{{ item.city }}</td>
+        <td>{{ item.url_photo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
